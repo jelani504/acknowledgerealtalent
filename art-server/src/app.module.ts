@@ -1,17 +1,17 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
+import { MongooseModule } from '@nestjs/mongoose';
 import { AppService } from './app.service';
 import { SharedModule } from './shared/shared.module';
 import { ConfigService } from 'shared/config/config.service';
 import { Config } from './shared/config/config.enum';
 
 @Module({
-  imports: [SharedModule],
+  imports: [SharedModule, MongooseModule.forRoot(ConfigService.connectionString, { useNewUrlParser: true })],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {
-
   static host: string;
   static port: number | string;
   static isDev: boolean;
