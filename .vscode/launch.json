@@ -16,10 +16,12 @@
             ],
             "program": "${workspaceFolder}/art-server/",
             "outFiles": [
-                "${workspaceFolder}/art-server/**/*.js"
+                "${workspaceFolder}/art-server/**/*.js",
+                "${workspaceFolder}/art-server/**/*.ts"
             ],
             "port": 5000,
-            "cwd": "${workspaceFolder}/art-server/"
+            "cwd": "${workspaceFolder}/art-server/",
+            "console": "integratedTerminal"
         }
     ]
 }
